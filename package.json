@@ -1,0 +1,16 @@
+{
+  "name": "foodmap",
+  "version": "0.0.1",
+  "description": "Curated food map",
+  "author": "Enny Jole <engjole@gmail.com>",
+  "license": "ARR",
+  "main": "app.js",
+  "keywords": [
+    "nodejs",
+    "bootstrap",
+    "express"
+  ],
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
