@@ -22,8 +22,8 @@ router.get('/about', function(req,res){
 
 app.use(express.static(path));
 app.use('/', router);
-app.get('/users', db.getUsers)
-app.get('/users/:id', db.getUserById)
+app.get('/cuisine', db.getCuisine)
+app.get('/cuisine/:id', db.getCuisineById)
 
 app.listen(port, function () {
   console.log('Example app listening on port 8080!')
