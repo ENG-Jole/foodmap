@@ -44,11 +44,12 @@ const getLaBreakById = (request, response) => {
   })
 }
 const getLaBreakByNeigh = (request, response) => {
-  const n = querystring.parse(request.params.neigh)
-  console.log(n)
-  const neigh = querystring.escape(n)
+  //const n = querystring.parse(request.params.neigh)
+  //console.log(n)
+  //const neigh = querystring.escape(n)
+  //console.log(neigh)
+  const neigh = String(request.params.neigh)
   console.log(neigh)
-
 
   pool.query('SELECT * FROM tbl_labreak WHERE (neighborhood1 = $1 OR neighborhood2 = $1 OR neighborhood3 = $1 OR neighborhood4 = $1 OR neighborhood5 = $1 OR neighborhood6 = $1)', [neigh], (error, results) => {
     if (error) {
