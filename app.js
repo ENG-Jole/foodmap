@@ -22,11 +22,18 @@ router.get('/about', function(req,res){
 
 app.use(express.static(path));
 app.use('/', router);
+
+//General
 app.get('/cuisine', db.getCuisine)
 app.get('/cuisine/:id', db.getCuisineById)
+app.get('/laneigh', db.getLaNeigh)
+app.get('/pdxneigh', db.getPdxNeigh)
+
+//LA Breakfast
 app.get('/labreak', db.getLaBreak)
 app.get('/labreak/:id', db.getLaBreakById)
 app.get('/labreak/neigh/:neigh', db.getLaBreakByNeigh)
+app.get('/labreak/cuisine/:cuisine', db.getLaBreakbyCuisine)
 
 app.listen(port, function () {
   console.log('App listening on port 80!')
