@@ -43,7 +43,7 @@ const getLaBreakById = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
-const getLaBreakByNeigh = (request, response) = > {
+const getLaBreakByNeigh = (request, response) => {
   const neigh = querystring.parse(request.params.neigh)
 
   pool.query('SELECT * FROM tbl_labreak WHERE (neighborhood1 = $1 OR neighborhood2 = $1 OR neighborhood3 = $1 OR neighborhood4 = $1 OR neighborhood5 = $1 OR neighborhood6 = $1)', [neigh], (error, results) => {
