@@ -79,6 +79,17 @@ const getLaBreakbyCuisine = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
+const getLaBreakbyNeighCuisine = (request, response) => {
+  const neigh = String(request.params.neigh)
+  const cuisine = String(request.params.cuisine)
+
+  pool.query('SELECT * FROM tbl_labreak WHERE (neighborhood1 = $1 OR neighborhood2 = $1 OR neighborhood3 = $1 OR neighborhood4 = $1 OR neighborhood5 = $1 OR neighborhood6 = $1) AND cuisine = $2', [neigh, cuisine], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
 module.exports = {
   getCuisine,
   getCuisineById,
@@ -87,5 +98,6 @@ module.exports = {
   getLaBreak,
   getLaBreakById,
   getLaBreakByNeigh,
-  getLaBreakbyCuisine
+  getLaBreakbyCuisine,
+  getLaBreakbyNeighCuisine
 }

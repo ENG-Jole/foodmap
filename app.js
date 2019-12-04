@@ -34,6 +34,7 @@ app.get('/labreak', db.getLaBreak)
 app.get('/labreak/:id', db.getLaBreakById)
 app.get('/labreak/neigh/:neigh', db.getLaBreakByNeigh)
 app.get('/labreak/cuisine/:cuisine', db.getLaBreakbyCuisine)
+app.get('/labreak/nc/:neigh/:cuisine', db.getLaBreakbyNeighCuisine)
 
 app.listen(port, function () {
   console.log('App listening on port 80!')
