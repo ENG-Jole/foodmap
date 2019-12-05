@@ -8,9 +8,11 @@
   "keywords": [
     "nodejs",
     "bootstrap",
-    "express"
+    "express",
+    "pg"
   ],
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^6.12.1"
   }
 }

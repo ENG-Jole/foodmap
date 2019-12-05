@@ -7,6 +7,7 @@ const pool = new Pool({
   password: 'readonly',
   port: 5432,
 })
+//GENERAL
 const getCuisine = (request, response) => {
   pool.query('SELECT * FROM tbl_cuisine ORDER BY name ASC', (error, results) => {
     if (error) {
@@ -41,6 +42,7 @@ const getPdxNeigh = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
+//LA BREAKFAST
 const getLaBreak = (request, response) => {
   pool.query('SELECT * FROM tbl_labreak ORDER BY name ASC', (error, results) => {
     if (error) {
@@ -90,6 +92,16 @@ const getLaBreakbyNeighCuisine = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
+const getLaBreakbyPrice = (request, response) => {
+  const price = String(request.params.price)
+
+  pool.query('SELECT * FROM tbl_labreak WHERE pricerange = $1', [price], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
 module.exports = {
   getCuisine,
   getCuisineById,
@@ -99,5 +111,6 @@ module.exports = {
   getLaBreakById,
   getLaBreakByNeigh,
   getLaBreakbyCuisine,
-  getLaBreakbyNeighCuisine
+  getLaBreakbyNeighCuisine,
+  getLaBreakbyPrice
 }

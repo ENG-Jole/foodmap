@@ -12,10 +12,12 @@ router.use(function (req,res,next) {
   next();
 });
 
+//Homepage
 router.get('/', function(req,res){
   res.sendFile(path + 'index.html');
 });
 
+//About page
 router.get('/about', function(req,res){
   res.sendFile(path + 'about.html');
 });
@@ -23,18 +25,19 @@ router.get('/about', function(req,res){
 app.use(express.static(path));
 app.use('/', router);
 
-//General
+//General Queries
 app.get('/cuisine', db.getCuisine)
 app.get('/cuisine/:id', db.getCuisineById)
 app.get('/laneigh', db.getLaNeigh)
 app.get('/pdxneigh', db.getPdxNeigh)
 
-//LA Breakfast
+//LA Breakfast Queries
 app.get('/labreak', db.getLaBreak)
 app.get('/labreak/:id', db.getLaBreakById)
 app.get('/labreak/neigh/:neigh', db.getLaBreakByNeigh)
 app.get('/labreak/cuisine/:cuisine', db.getLaBreakbyCuisine)
 app.get('/labreak/nc/:neigh/:cuisine', db.getLaBreakbyNeighCuisine)
+app.get('/labreak/price/:price', db.getLaBreakbyPrice)
 
 app.listen(port, function () {
   console.log('App listening on port 80!')
