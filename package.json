@@ -13,6 +13,6 @@
   ],
   "dependencies": {
     "express": "^4.16.4",
-    "pg": "^6.12.1"
+    "node-postgres": "^6.12.1"
   }
 }
