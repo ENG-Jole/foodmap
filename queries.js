@@ -102,6 +102,40 @@ const getLaBreakbyPrice = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
+const getLaBreakByNeighPrice = (request, response) => {
+  const neigh = String(request.params.neigh)
+  const price = String(request.params.price)
+
+  pool.query('SELECT * FROM tbl_labreak WHERE (neighborhood1 = $1 OR neighborhood2 = $1 OR neighborhood3 = $1 OR neighborhood4 = $1 OR neighborhood5 = $1 OR neighborhood6 = $1) AND pricerange = $2', [neigh, price], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+const getLaBreakByCuisinePrice = (request, response) => {
+  const cuisine = String(request.params.cuisine)
+  const price = String(request.params.price)
+
+  pool.query('SELECT * FROM tbl_labreak WHERE cuisine = $1 AND pricerange = $2', [cuisine, price], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+const getLaBreakByNeighCuisinePrice = (request, response) => {
+  const neigh = String(request.params.neigh)
+  const cuisine = String(request.params.neigh)
+  const price = String(request.params.price)
+
+  pool.query('SELECT * FROM tbl_labreak WHERE (neighborhood1 = $1 OR neighborhood2 = $1 OR neighborhood3 = $1 OR neighborhood4 = $1 OR neighborhood5 = $1 OR neighborhood6 = $1) AND cuisine = $2 AND pricerange = $3', [neigh, cuisine, price], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
 module.exports = {
   getCuisine,
   getCuisineById,
@@ -112,5 +146,8 @@ module.exports = {
   getLaBreakByNeigh,
   getLaBreakbyCuisine,
   getLaBreakbyNeighCuisine,
-  getLaBreakbyPrice
+  getLaBreakbyPrice,
+  getLaBreakByNeighPrice,
+  getLaBreakByCuisinePrice,
+  getLaBreakByNeighCuisinePrice
 }
