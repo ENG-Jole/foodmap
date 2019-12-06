@@ -62,7 +62,7 @@ const getLaBreakById = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
-const getLaBreakVisted = (request, response) => {
+const getLaBreakVisited = (request, response) => {
   pool.query('SELECT * FROM tbl_labreak WHERE havevisited = TRUE ORDER BY name ASC', (error, results) => {
     if (error) {
       throw error
@@ -165,7 +165,7 @@ const getLaLunchById = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
-const getLaLunchVisted = (request, response) => {
+const getLaLunchVisited = (request, response) => {
   pool.query('SELECT * FROM tbl_lalunch WHERE havevisited = TRUE ORDER BY name ASC', (error, results) => {
     if (error) {
       throw error
