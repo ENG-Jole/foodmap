@@ -45,7 +45,7 @@ app.get('/labreak/ncp/:neigh/:cuisine/:price', db.getLaBreakByNeighCuisinePrice)
 
 //LA Lunch Queries
 app.get('/lalunch', db.getLaLunch)
-app.get('/lalunch/visited', get.LaLunchVisited)
+app.get('/lalunch/visited', db.getLaLunchVisited)
 app.get('/lalunch/:id', db.getLaLunchById)
 app.get('/lalunch/neigh/:neigh', db.getLaLunchByNeigh)
 app.get('/lalunch/cuisine/:cuisine', db.getLaLunchByCuisine)
