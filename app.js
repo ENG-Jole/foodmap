@@ -33,7 +33,7 @@ app.get('/pdxneigh', db.getPdxNeigh)
 
 //LA Breakfast Queries
 app.get('/labreak', db.getLaBreak)
-app.get('/labreak/visited', db.getLaBreakVisted)
+app.get('/labreak/visited', db.getLaBreakVisited)
 app.get('/labreak/:id', db.getLaBreakById)
 app.get('/labreak/neigh/:neigh', db.getLaBreakByNeigh)
 app.get('/labreak/cuisine/:cuisine', db.getLaBreakByCuisine)

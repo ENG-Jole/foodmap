@@ -264,7 +264,7 @@ module.exports = {
   getLaBreakByCuisinePrice,
   getLaBreakByNeighCuisinePrice,
   getLaLunch,
-  getLaLunchVisted,
+  getLaLunchVisited,
   getLaLunchById,
   getLaLunchByNeigh,
   getLaLunchByCuisine,
