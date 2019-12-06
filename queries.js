@@ -254,7 +254,7 @@ module.exports = {
   getLaNeigh,
   getPdxNeigh,
   getLaBreak,
-  getLaBreakVisted,
+  getLaBreakVisited,
   getLaBreakById,
   getLaBreakByNeigh,
   getLaBreakByCuisine,
