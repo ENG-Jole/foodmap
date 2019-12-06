@@ -52,7 +52,7 @@ app.get('/lalunch/cuisine/:cuisine', db.getLaLunchByCuisine)
 app.get('/lalunch/nc/:neigh/:cuisine', db.getLaLunchByNeighCuisine)
 app.get('/lalunch/price/:price', db.getLaLunchByPrice)
 app.get('/lalunch/np/:neigh/:price', db.getLaLunchByNeighPrice)
-app.get('/lalunch/cp/:cuisine/:price', db.getLaLunchByCusinePrice)
+app.get('/lalunch/cp/:cuisine/:price', db.getLaLunchByCuisinePrice)
 app.get('/lalunch/ncp/:neigh/:cuisine/:price', db.getLaLunchByNeighCuisinePrice)
 
 app.listen(port, function () {
