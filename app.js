@@ -33,14 +33,27 @@ app.get('/pdxneigh', db.getPdxNeigh)
 
 //LA Breakfast Queries
 app.get('/labreak', db.getLaBreak)
+app.get('/labreak/visited', db.getLaBreakVisted)
 app.get('/labreak/:id', db.getLaBreakById)
 app.get('/labreak/neigh/:neigh', db.getLaBreakByNeigh)
-app.get('/labreak/cuisine/:cuisine', db.getLaBreakbyCuisine)
-app.get('/labreak/nc/:neigh/:cuisine', db.getLaBreakbyNeighCuisine)
-app.get('/labreak/price/:price', db.getLaBreakbyPrice)
+app.get('/labreak/cuisine/:cuisine', db.getLaBreakByCuisine)
+app.get('/labreak/nc/:neigh/:cuisine', db.getLaBreakByNeighCuisine)
+app.get('/labreak/price/:price', db.getLaBreakByPrice)
 app.get('/labreak/np/:neigh/:price', db.getLaBreakByNeighPrice)
 app.get('/labreak/cp/:cuisine/:price', db.getLaBreakByCuisinePrice)
 app.get('/labreak/ncp/:neigh/:cuisine/:price', db.getLaBreakByNeighCuisinePrice)
+
+//LA Lunch Queries
+app.get('/lalunch', db.getLaLunch)
+app.get('/lalunch/visited', get.LaLunchVisited)
+app.get('/lalunch/:id', db.getLaLunchById)
+app.get('/lalunch/neigh/:neigh', db.getLaLunchByNeigh)
+app.get('/lalunch/cuisine/:cuisine', db.getLaLunchByCuisine)
+app.get('/lalunch/nc/:neigh/:cuisine', db.getLaLunchByNeighCuisine)
+app.get('/lalunch/price/:price', db.getLaLunchByPrice)
+app.get('/lalunch/np/:neigh/:price', db.getLaLunchByNeighPrice)
+app.get('/lalunch/cp/:cuisine/:price', db.getLaLunchByCusinePrice)
+app.get('/lalunch/ncp/:neigh/:cuisine/:price', db.getLaLunchByNeighCuisinePrice)
 
 app.listen(port, function () {
   console.log('App listening on port 80!')
