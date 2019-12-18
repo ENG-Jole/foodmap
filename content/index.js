@@ -30,11 +30,10 @@ function App() {
     }
     fetchData();
   }, []);
-render(
-  return (
+return(
     <div class="container">
-      <BootstrapTable keyField='id' data={ items } columns={ columns } />
+      <BootstrapTable keyField='id' data={ items } columns={ columns }/>
     </div>
   );
-)
-};
+}
+render(<App />, document.getElementById("root"));
