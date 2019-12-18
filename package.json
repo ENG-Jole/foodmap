@@ -5,14 +5,23 @@
   "author": "Enny Jole <engjole@gmail.com>",
   "license": "UNLICENSED",
   "main": "app.js",
+  "repository": "github.com/ENG-Jole/foodmap",
   "keywords": [
     "nodejs",
     "bootstrap",
     "express",
-    "pg"
+    "pg",
+    "react",
+    "react-dom"
   ],
   "dependencies": {
     "express": "^4.16.4",
-    "pg": "^7.8.2"
+    "pg": "^7.8.2",
+    "popper": "^1.16.0",
+    "bootstrap": "^4.4.1",
+    "jquery": "^1.9.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-bootstrap-table-next": "^3.3.3"
   }
 }
