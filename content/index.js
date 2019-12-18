@@ -21,6 +21,9 @@ function App() {
     async function fetchData() {
       var data = await fetch(apiUrl).then(res => {
         return res.json();
+        if (error) {
+          throw error
+        }
       });
       setItems(data);
       console.log(data);
