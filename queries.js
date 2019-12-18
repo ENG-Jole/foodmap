@@ -2,7 +2,7 @@ const Pool = require('pg').Pool
 const querystring = require('querystring');
 const pool = new Pool({
   user: 'readonly',
-  host: 'localhost',
+  host: 'food.engjole.net',
   database: 'foodmap',
   password: 'readonly',
   port: 5432,

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import BootstrapTable from 'react-bootstrap-table-next';
+import "./style.css";
 
 const apiUrl = "https://food.engjole.net/labreak";
 
