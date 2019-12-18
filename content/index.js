@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import BootstrapTable from 'react-bootstrap-table-next';
-import "./style.css";
+const React = require('React');
+const Component = React.Component();
+const Reactdom = require('react-dom');
+const render = Reactdom.render();
+const reactbootstraptable = require('react-bootstrap-table-next');
+const BootstrapTable = reactbootstraptable.BootstrapTable();
 
 const apiUrl = "https://food.engjole.net/labreak";
 
