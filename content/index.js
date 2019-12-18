@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import BootstrapTable from 'react-bootstrap-table-next';
 
-const apiUrl = "https://food.engjole.net";
+const apiUrl = "https://food.engjole.net/labreak";
 
 function App() {
   const [items, setItems] = React.useState([]);
