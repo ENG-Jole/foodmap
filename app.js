@@ -36,7 +36,7 @@ router.get('/la', function(req, res){
   res.sendFile(dir + 'la.html');
 });
 
-router.get('/la/breakfast/*', function(req, res){
+router.get('/la/breakfast', function(req, res){
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
