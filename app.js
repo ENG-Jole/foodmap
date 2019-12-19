@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const router = express.Router();
-const bodyParser = require('body-parser')
-const { Client } = require('pg')
-const db = require('./queries')
-const path = __dirname + '/content/';
+const bodyParser = require('body-parser');
+const { Client } = require('pg');
+const db = require('./queries');
+const dir = __dirname + '/content/';
+const path = require('path');
 const port = 80;
 
 router.use(function (req,res,next) {
@@ -12,18 +14,32 @@ router.use(function (req,res,next) {
   next();
 });
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.use(express.static(dir));
+app.use(express.static(path.join(__dirname, 'build')));
+app.use('/', router);
+
 //Homepage
 router.get('/', function(req,res){
-  res.sendFile(path + 'index.html');
+  res.sendFile(dir + 'index.html');
 });
 
 //About page
 router.get('/about', function(req,res){
-  res.sendFile(path + 'about.html');
+  res.sendFile(dir + 'about.html');
 });
 
-app.use(express.static(path));
-app.use('/', router);
+router.get('/la', function(req, res){
+  res.sendFile(dir + 'la.html');
+});
+
+router.get('/la/breakfast', function(req, res){
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
 
 //General Queries
 app.get('/cuisine', db.getCuisine)

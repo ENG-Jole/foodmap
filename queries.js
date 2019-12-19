@@ -7,6 +7,7 @@ const pool = new Pool({
   password: 'readonly',
   port: 5432,
 })
+
 //GENERAL
 const getCuisine = (request, response) => {
   pool.query('SELECT * FROM tbl_cuisine ORDER BY name ASC', (error, results) => {
