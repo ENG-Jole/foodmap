@@ -5,7 +5,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const { Client } = require('pg');
 const db = require('./queries');
-const dir = __dirname + '/content';
+const dir = __dirname + '/content/';
 const path = require('path');
 const port = 80;
 
