@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const router = express.Router();
-const bodyParser = require('body-parser')
-const { Client } = require('pg')
-const db = require('./queries')
+const bodyParser = require('body-parser');
+const { Client } = require('pg');
+const db = require('./queries');
 const path = __dirname + '/content/';
 const port = 80;
 
