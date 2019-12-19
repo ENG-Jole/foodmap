@@ -23,6 +23,12 @@ router.get('/about', function(req,res){
   res.sendFile(path + 'about.html');
 });
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(express.static(path));
 app.use('/', router);
 
