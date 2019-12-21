@@ -24,6 +24,7 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(dir));
 app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "images")));
 app.use("/", router);
 
 //Homepage
