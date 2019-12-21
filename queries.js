@@ -355,7 +355,7 @@ const getLaDinner = (request, response) => {
 //LA Coffee/Tea
 const getLaCoffee = (request, response) => {
   pool.query(
-    "SELECT * FROM tbl_lacofee ORDER BY name ASC",
+    "SELECT * FROM tbl_lacoffee ORDER BY name ASC",
     (error, results) => {
       if (error) {
         throw error;
