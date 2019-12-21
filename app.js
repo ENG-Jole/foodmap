@@ -80,6 +80,15 @@ app.get(
   db.getLaLunchByNeighCuisinePrice
 );
 
+//LA Dinner Queries
+app.get("/ladinner", db.getLaDinner);
+
+//LA Coffee Queries
+app.get("/lacoffee", db.getLaCoffee);
+
+//LA Bar Queries
+app.get("/labars", db.getLaBars);
+
 app.listen(port, function() {
   console.log("App listening on port 80!");
 });
