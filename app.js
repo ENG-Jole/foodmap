@@ -93,6 +93,21 @@ app.get("/lacoffee", db.getLaCoffee);
 //LA Bar Queries
 app.get("/labars", db.getLaBars);
 
+//PDX Breakfast Queries
+app.get("/pdxbreak", db.getPdxBreak);
+
+//PDX Lunch Queries
+app.get("/pdxlunch", db.getPdxLunch);
+
+//PDX Dinner Queries
+app.get("/pdxdinner", db.getPdxDinner);
+
+//PDX Coffee Queries
+app.get("/pdxcoffee", db.getPdxCoffee);
+
+//PDX Bar Queries
+app.get("/pdxbars", db.getPdxBars);
+
 app.listen(port, function() {
   console.log("App listening on port 80!");
 });

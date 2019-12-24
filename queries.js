@@ -378,6 +378,70 @@ const getLaBars = (request, response) => {
   );
 };
 
+//PDX Breakfast
+const getPdxBreak = (request, response) => {
+  pool.query(
+    "SELECT * FROM tbl_pdxbreak ORDER BY name ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+//PDX Lunch
+const getPdxLunch = (request, response) => {
+  pool.query(
+    "SELECT * FROM tbl_pdxlunch ORDER BY name ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+//PDX Dinner
+const getPdxDinner = (request, response) => {
+  pool.query(
+    "SELECT * FROM tbl_pdxdinner ORDER BY name ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+//PDX Coffee
+const getPdxCoffee = (request, response) => {
+  pool.query(
+    "SELECT * FROM tbl_pdxcoffee ORDER BY name ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+//PDX Bars
+const getPdxBars = (request, response) => {
+  pool.query(
+    "SELECT * FROM tbl_pdxbars ORDER BY name ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
 module.exports = {
   getCuisine,
   getCuisineById,
@@ -405,5 +469,10 @@ module.exports = {
   getLaLunchByNeighCuisinePrice,
   getLaDinner,
   getLaCoffee,
-  getLaBars
+  getLaBars,
+  getPdxBreak,
+  getPdxLunch,
+  getPdxDinner,
+  getPdxCoffee,
+  getPdxBars
 };
