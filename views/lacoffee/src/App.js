@@ -7,7 +7,7 @@ const gridStyle = {
   textAlign: "center"
 };
 
-const apiUrl = "http://food.engjole.net/labreak";
+const apiUrl = "http://food.engjole.net/lacoffee";
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -25,14 +25,10 @@ function App() {
     <div>
       {items.map(item => (
         <Card title={item.name} key={item.id}>
-          <Card.Grid style={gridStyle}>{item.cuisine}</Card.Grid>
-          <Card.Grid style={gridStyle}>{item.pricerange}</Card.Grid>
           <Card.Grid style={gridStyle}>{item.neighborhood1}</Card.Grid>
           <Card.Grid style={gridStyle}>{item.neighborhood2}</Card.Grid>
           <Card.Grid style={gridStyle}>{item.neighborhood3}</Card.Grid>
           <Card.Grid style={gridStyle}>{item.neighborhood4}</Card.Grid>
-          <Card.Grid style={gridStyle}>{item.neighborhood5}</Card.Grid>
-          <Card.Grid style={gridStyle}>{item.neighborhood6}</Card.Grid>
         </Card>
       ))}
       </div>

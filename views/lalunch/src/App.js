@@ -7,7 +7,7 @@ const gridStyle = {
   textAlign: "center"
 };
 
-const apiUrl = "http://food.engjole.net/labreak";
+const apiUrl = "http://food.engjole.net/lalunch";
 
 function App() {
   const [items, setItems] = React.useState([]);

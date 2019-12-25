@@ -9,21 +9,41 @@ const dir = __dirname + "/content/";
 const path = require("path");
 const port = 80;
 
+//Logging
 router.use(function(req, res, next) {
   console.log("/" + req.method);
   next();
 });
 
+//Using CORS
 app.use(cors());
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+//Allowing directories
 app.use(express.static(dir));
+
+//LA
 app.use(express.static(path.join(__dirname, "views", "labreak", "build")));
 app.use(express.static(path.join(__dirname, "views", "lalunch", "build")));
+app.use(express.static(path.join(__dirname, "views", "ladinner", "build")));
+app.use(express.static(path.join(__dirname, "views", "lacoffee", "build")));
+app.use(express.static(path.join(__dirname, "views", "labars", "build")));
+
+//PDX
+app.use(express.static(path.join(__dirname, "views", "pdxbreak", "build")));
+app.use(express.static(path.join(__dirname, "views", "pdxlunch", "build")));
+app.use(express.static(path.join(__dirname, "views", "pdxdinner", "build")));
+app.use(express.static(path.join(__dirname, "views", "pdxcoffee", "build")));
+app.use(express.static(path.join(__dirname, "views", "pdxbars", "build")));
+
+//Images
 app.use(express.static(path.join(__dirname, "images")));
+
+
 app.use("/", router);
 
 //Homepage
@@ -36,6 +56,7 @@ router.get("/about", function(req, res) {
   res.sendFile(dir + "about.html");
 });
 
+//Landing pages
 router.get("/la", function(req, res) {
   res.sendFile(dir + "la.html");
 });
@@ -43,10 +64,58 @@ router.get("/pdx", function(req, res) {
   res.sendFile(dir + "pdx.html");
 });
 
+//Views
+//LA Breakfast
 router.get("/la/breakfast", function(req, res) {
   res.sendFile(path.join(__dirname, "views", "labreak", "build", "index.html"));
 });
 
+//LA Lunch
+router.get("/la/lunch", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "lalunch", "build", "index.html"));
+});
+
+//LA Dinner
+router.get("/la/dinner", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "ladinner", "build", "index.html"));
+});
+
+//LA Coffee
+router.get("/la/coffee", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "lacoffee", "build", "index.html"));
+});
+
+//LA Bars
+router.get("/la/bars", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "labars", "build", "index.html"));
+});
+
+//pdx Breakfast
+router.get("/pdx/breakfast", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "pdxbreak", "build", "index.html"));
+});
+
+//PDX Lunch
+router.get("/pdx/lunch", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "pdxlunch", "build", "index.html"));
+});
+
+//PDX Dinner
+router.get("/pdx/dinner", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "pdxdinner", "build", "index.html"));
+});
+
+//PDX Coffee
+router.get("/pdx/coffee", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "pdxcoffee", "build", "index.html"));
+});
+
+//PDX Bars
+router.get("/pdx/bars", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "pdxbars", "build", "index.html"));
+});
+
+//API
 //General Queries
 app.get("/cuisine", db.getCuisine);
 app.get("/cuisine/:id", db.getCuisineById);
@@ -107,6 +176,7 @@ app.get("/pdxcoffee", db.getPdxCoffee);
 //PDX Bar Queries
 app.get("/pdxbars", db.getPdxBars);
 
+//Enabling the server
 app.listen(port, function() {
   console.log("App listening on port 80!");
 });
