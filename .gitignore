@@ -9,6 +9,7 @@
 
 # production
 .dockerignore
+/views/*/build
 
 # misc
 .DS_Store
