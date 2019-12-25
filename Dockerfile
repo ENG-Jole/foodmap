@@ -7,3 +7,4 @@ RUN npm install
 COPY --chown=node:node . .
 EXPOSE 80
 CMD [ "node", "app.js" ]
+# Will need to add separate build process for react.js before final release

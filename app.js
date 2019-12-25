@@ -21,7 +21,8 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(dir));
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "views" + "labreak" + "build")));
+app.use(express.static(path.join(__dirname, "views" + "lalunch" + "build")));
 app.use(express.static(path.join(__dirname, "images")));
 app.use("/", router);
 
