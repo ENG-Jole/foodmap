@@ -1,8 +1,8 @@
-const Pool = require("pg").Pool;
+const Pool = require("pg").Pool; //node module for Postgressql
 const querystring = require("querystring");
 const pool = new Pool({
-  user: "readonly",
-  host: "localhost",
+  user: "readonly", // user with only SELECT grants on all public tables
+  host: "localhost", // need to change in prod
   database: "foodmap",
   password: "readonly",
   port: 5432
