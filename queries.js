@@ -390,6 +390,17 @@ const getPdxBreak = (request, response) => {
     }
   );
 };
+const getPdxBreakCuisine = (request, response) => {
+  pool.query(
+    "SELECT cuisine FROM tbl_pdxbreak GROUP BY cuisine ORDER BY cuisine ASC",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
 
 //PDX Lunch
 const getPdxLunch = (request, response) => {
