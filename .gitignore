@@ -3,6 +3,8 @@
 /views/*/node_modules
 /.pnp
 .pnp.js
+package-lock.json
+/views/*/package-lock.json
 
 # testing
 /coverage
