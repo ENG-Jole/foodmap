@@ -25,7 +25,10 @@ app.use(function(req, res, next) {
 app.use(express.static(dir));
 
 // Only need to allow the web server to serve the production build from React, Docker image will clean up the raw code
+
+app.use(express.static(path.join(__dirname, "content")));
 //LA
+app.use(express.static(path.join(__dirname, "views", "la", "build")));
 app.use(express.static(path.join(__dirname, "views", "labreak", "build")));
 app.use(express.static(path.join(__dirname, "views", "lalunch", "build")));
 app.use(express.static(path.join(__dirname, "views", "ladinner", "build")));
@@ -56,9 +59,9 @@ router.get("/about", function(req, res) {
 
 //Landing pages
 // html + css, these then branch off to the different views
-router.get("/la", function(req, res) {
-  res.sendFile(dir + "la.html");
-});
+//router.get("/la", function(req, res) {
+//  res.sendFile(dir + "la.html");
+//});
 router.get("/pdx", function(req, res) {
   res.sendFile(dir + "pdx.html");
 });
@@ -68,6 +71,11 @@ router.get("/pdx", function(req, res) {
 // the create-react-app bootstrap requires index.html + index.js, so we serve the files based on unique paths rather than labreak.html, etc
 // this also allows us to separate the API URL for the GET requests React uses from the actual UI
 // also, using react for a multi-page app!
+//LA Home
+router.get("/la", function(req, res) {
+  res.sendFile(path.join(__dirname, "views", "la", "build", "index.html"));
+});
+
 //LA Breakfast
 router.get("/la/breakfast", function(req, res) {
   res.sendFile(path.join(__dirname, "views", "labreak", "build", "index.html"));
