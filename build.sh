@@ -24,7 +24,7 @@ cd ./views/labars; npm install; npm run-script build; cd ../..;
 
 #cd ./views/pdx; npm install; npm run-script build; cd ../..;
 cd ./views/pdxbreak; npm install; npm run-script build; cd ../..;
-cd ./views/pdxlunch; npm install; npm run-script build; cd ../..;s
+cd ./views/pdxlunch; npm install; npm run-script build; cd ../..;
 cd ./views/pdxdinner; npm install; npm run-script build; cd ../..;
 cd ./views/pdxcoffee; npm install; npm run-script build; cd ../..;
 cd ./views/pdxbars; npm install; npm run-script build; cd ../..;

@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require("express"); // core web server + API
 const app = express(); // sugar
 const cors = require("cors"); // required for cross origin resource sharing-- in case the contianer runs on a different domain than the db
