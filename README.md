@@ -12,9 +12,7 @@ Food Map uses [React](https://reactjs.org) with the [Ant Design](https://ant.des
 1. Download and extract the source to a directory of your choosing
 1. cd into the directory
 1. run ```npm install```
-1. cd into each directory in ```app/views/```
-1. for each directory, run ```npm install``` and ```npm run build```
-1. cd back into the root directory of the app
+1. run ```build.sh```
 1. run ```node app.js```
 Note: I have the app listening on port 80 by default, which _is_ a privileged port. You can either change the port and redirect port 80 to the new port, or use a workaround like [this one](https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps#give-safe-user-permission-to-use-port-80) to let it run on port 80. **DO NOT RUN AS ROOT** 
 Additionally, the database address is currently set to localhost. Change as you see fit.
